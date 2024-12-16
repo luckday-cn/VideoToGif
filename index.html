@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="luckday" />
+    <title>视频转GIF工具</title>
+    <meta name="keywords" content="免费视频转GIF工具,GIF转换器,在线视频处理器,video.luckday.cn" />
+    <meta name="description" content="视频转GIF工具 - 在线一键免费视频转GIF,支持mp4,mov等所有视频格式,浏览器处理,数据无需上传,video.luckday.cn" />
+    <link sizes="32x32" rel="icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var loadingDiv = document.querySelector(".load");
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            loadingDiv.style.display = "none";
+          }, 1500);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="load"><h1 class="loading"></h1></div>
+    <div class="header">
+      <div class="header-container">
+        <div class="logo">
+          <svg class="icon" viewBox="0 0 1024 1024" version="1.1" width="40" height="40">
+            <path
+              d="M563.2 870.4v102.4H460.8v-102.4h102.4z m456.192-678.912c3.072 4.096 4.608 9.728 4.608 14.848v611.328c0 14.336-11.264 25.6-25.6 25.6-5.12 0-10.752-1.536-14.848-4.608l-428.032-305.664c-11.264-8.192-14.336-24.064-6.144-35.84 1.536-2.56 3.584-4.096 6.144-6.144l428.032-305.664c11.264-8.192 27.648-5.12 35.84 6.144zM4.608 191.488c8.192-11.264 24.064-14.336 35.84-6.144l428.032 305.664c11.264 8.192 14.336 24.064 6.144 35.84-1.536 2.56-3.584 4.096-6.144 6.144L40.448 838.656c-11.264 8.192-27.648 5.632-35.84-6.144-3.072-4.096-4.608-9.728-4.608-14.848V206.336c0-5.632 1.536-10.752 4.608-14.848zM563.2 665.6v102.4H460.8v-102.4h102.4zM102.4 355.328v312.832L321.536 512 102.4 355.328zM563.2 256v102.4H460.8V256h102.4z m0-204.8v102.4H460.8V51.2h102.4z"
+              fill="#2c2c2c"
+            ></path>
+          </svg>
+          <h1>VIDEO TO GIF</h1>
+        </div>
+        <div class="language">
+          <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28">
+            <path d="M1024 0H0v1024h1024V0z" fill="#FFFFFF" fill-opacity=".01" p-id="42390"></path>
+            <path d="M512 896c212.074667 0 384-171.925333 384-384S724.074667 128 512 128 128 299.925333 128 512s171.925333 384 384 384z" fill="#000000" p-id="42391"></path>
+            <path
+              d="M85.333333 512C85.333333 276.352 276.352 85.333333 512 85.333333s426.666667 191.018667 426.666667 426.666667-191.018667 426.666667-426.666667 426.666667S85.333333 747.648 85.333333 512zM512 170.666667C323.477333 170.666667 170.666667 323.477333 170.666667 512s152.810667 341.333333 341.333333 341.333333 341.333333-152.810667 341.333333-341.333333S700.522667 170.666667 512 170.666667z"
+              fill="#000000"
+              p-id="42392"
+            ></path>
+            <path
+              d="M42.666667 384a42.666667 42.666667 0 0 1 42.666666-42.666667h853.333334a42.666667 42.666667 0 1 1 0 85.333334H85.333333a42.666667 42.666667 0 0 1-42.666666-42.666667zM42.666667 640a42.666667 42.666667 0 0 1 42.666666-42.666667h853.333334a42.666667 42.666667 0 1 1 0 85.333334H85.333333a42.666667 42.666667 0 0 1-42.666666-42.666667z"
+              fill="#FFFFFF"
+              p-id="42393"
+            ></path>
+            <path
+              d="M446.677333 224.405333C421.610667 295.978667 405.333333 397.653333 405.333333 512c0 114.346667 16.277333 216.021333 41.344 287.594667 12.586667 36.010667 26.624 62.08 40.064 78.336 13.674667 16.533333 22.421333 18.069333 25.258667 18.069333s11.584-1.536 25.258667-18.069333c13.44-16.256 27.456-42.325333 40.064-78.336C602.389333 728.021333 618.666667 626.346667 618.666667 512c0-114.346667-16.277333-216.021333-41.344-287.594667-12.586667-36.010667-26.624-62.08-40.064-78.336C523.584 129.536 514.837333 128 512 128s-11.584 1.536-25.258667 18.069333c-13.44 16.256-27.456 42.325333-40.064 78.336z m-25.685333-132.736C443.050667 65.002667 473.6 42.666667 512 42.666667c38.4 0 68.949333 22.336 91.008 49.002666 22.272 26.922667 40.426667 63.317333 54.869333 104.533334C686.826667 279.04 704 390.698667 704 512s-17.152 232.96-46.144 315.797333c-14.421333 41.216-32.576 77.610667-54.848 104.533334C580.949333 958.997333 550.4 981.333333 512 981.333333c-38.4 0-68.949333-22.336-91.008-49.002666-22.272-26.922667-40.426667-63.317333-54.869333-104.533334C337.173333 744.96 320 633.301333 320 512s17.152-232.96 46.144-315.797333c14.421333-41.216 32.576-77.610667 54.848-104.533334z"
+              fill="#FFFFFF"
+              p-id="42394"
+            ></path>
+          </svg>
+          <h1>中文</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1 style="font-size: 60px; font-weight: 500; margin: 26px 0">视频转GIF工具</h1>
+      <div style="text-align: center">
+        <p>一键视频转GIF动图，支持mp4,mov等所有视频格式。</p>
+        <p>不限视频大小，不限时长，简单高效，自定义剪切所需要转换的区域。</p>
+        <p>您的视频从不会离开您的浏览器。</p>
+        <p style="margin: 40px; font-weight: 600">使用完全免费</p>
+      </div>
+      <div class="upload-form">
+        <div class="upload-area">
+          <div class="drop_target">
+            <div class="drop_target_text">
+              <div class="img_files_container img_files_show_all">
+                <div class="img_file">
+                  <img src="./img/video.svg" importance="low" alt="JPEG icon" decode="async" loading="lazy" class="file_card" />
+                </div>
+                <div class="img_file">
+                  <img src="./img/mp4.svg" importance="low" alt="PNG icon" decode="async" loading="lazy" class="file_card" />
+                </div>
+                <div class="img_file">
+                  <img src="./img/video3.svg" style="width: 56px" importance="low" alt="SVG icon" decode="async" loading="lazy" class="file_card" />
+                </div>
+                <span>将视频拖至此处以开始</span>
+              </div>
+            </div>
+          </div>
+          <input type="file" id="videoInput" accept="video/*" />
+        </div>
+      </div>
+
+      <div style="text-align: center">
+        <div class="video-overlay">
+          <div id="preview-container">
+            <video id="preview" controls controlsList="nodownload nofullscreen noremoteplayback" oncontextmenu="return false"></video>
+            <div class="overlay">
+              <div class="overlay-top"></div>
+              <div class="overlay-right"></div>
+              <div class="overlay-bottom"></div>
+              <div class="overlay-left"></div>
+            </div>
+            <div id="selection-box">
+              <div class="resize-handle nw"></div>
+              <div class="resize-handle ne"></div>
+              <div class="resize-handle sw"></div>
+              <div class="resize-handle se"></div>
+              <div id="selection-info"></div>
+            </div>
+          </div>
+          <button id="selectAreaBtn" title="截图">
+            <svg class="icon" viewBox="0 0 1024 1024" width="200" height="200">
+              <path
+                d="M643.12 458.098l-7.907 18.49c-13.142 30.586-22.212 62.566-33.842 93.85l11.63 21.165 3.372-2.21 151.181-261.66C820.002 183.995 764.182 91.891 692.43 32L556.947 292.497l76.87 147.692zM392.975 629.05c-39.656-21.398-86.057-18.607-128.97 3.14a235.261 235.261 0 0 0-97.802 99.198 235.494 235.494 0 0 0-28.724 136.18c5.582 48.261 28.84 88.382 68.497 109.78s86.173 18.49 129.085-3.256a228.865 228.865 0 0 0 84.778-77.451l5.117-8.722c2.558-4.187 5-8.49 7.442-12.909l52.681-89.546-90.243-155.484z m-39.889 202.932a144.204 144.204 0 0 1-58.844 61.17 49.425 49.425 0 0 1-45.238 4.186 49.657 49.657 0 0 1-21.514-39.656 145.715 145.715 0 0 1 18.49-83.033 144.204 144.204 0 0 1 58.845-61.17 50.122 50.122 0 0 1 45.238-4.187 49.54 49.54 0 0 1 21.398 40.005 144.436 144.436 0 0 1-18.375 82.685z m504.829-109.665a235.494 235.494 0 0 0-97.919-99.198c-42.33-21.282-88.848-24.538-128.969-3.256a125.131 125.131 0 0 0-46.517 43.726c-20.003-37.097-38.26-71.171-47.68-90.127 18.025-41.4 23.607-71.055 41.284-112.688L355.643 33.047c-71.403 59.774-127.922 151.878-74.31 295.617l310.153 537.74c2.326 4.419 4.768 8.721 7.443 12.908l5 8.722a229.912 229.912 0 0 0 84.778 77.451c43.029 21.747 89.43 24.538 129.086 3.14s63.03-61.635 68.497-109.664a236.191 236.191 0 0 0-28.376-136.645z m-61.403 125.946a50.122 50.122 0 0 1-21.398 40.005 50.355 50.355 0 0 1-45.354-4.187 157.577 157.577 0 0 1-77.219-144.204 50.122 50.122 0 0 1 21.398-40.004 49.657 49.657 0 0 1 45.355 4.186 157.577 157.577 0 0 1 77.218 144.204z"
+                fill="#fff"
+                p-id="21541"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="timeline-container">
+          <div class="timeline">
+            <div class="timeline-thumbnails"></div>
+            <div class="timeline-progress"></div>
+            <div class="timeline-handle left"></div>
+            <div class="timeline-handle right">
+              <div class="timeline-time end">0:00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分割线 -->
+      <div class="line"></div>
+
+      <div class="video-container">
+        <div class="video-left">
+          <i class="fa fa-file-video-o"></i>
+        </div>
+        <div class="video-center">
+          <div class="video-info-name">
+            <div class="video-info-item">
+              <span id="video-name">Video Name</span>
+            </div>
+          </div>
+          <div class="video-info-warp">
+            <div class="video-info-item">
+              <i class="fa fa-clock-o"></i>
+              <span id="video-duration">00:00</span>
+            </div>
+            <div class="video-info-item">|</div>
+            <div class="video-info-item">
+              <i class="fa fa-file-image-o"></i>
+              <span id="video-resolution">Resolution</span>
+            </div>
+          </div>
+        </div>
+        <div class="video-right">
+          <div class="settings-container">
+            <label class="settings-label">
+              帧/秒:
+              <div class="slider-container">
+                <input type="range" id="fps" class="slider" min="1" max="30" value="10" />
+                <span class="slider-value" id="fpsValue">10</span>
+              </div>
+            </label>
+            <label class="settings-label">
+              画质:
+              <div class="slider-container">
+                <input type="range" id="quality" class="slider" min="1" max="30" value="10" />
+                <span class="slider-value" id="qualityValue">10</span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-container">
+        <button class="convert-button" id="convertBtn" disabled>开始转换 GIF</button>
+      </div>
+      <div id="progress">
+        <div id="progress-text">转换中... 请稍后...</div>
+        <div class="progress-bar">
+          <div class="progress-bar-fill"></div>
+        </div>
+      </div>
+      <div class="result-container">
+        <div id="result"></div>
+        <div class="download-container">
+          <div class="gif-info">
+            <h3 class="gif-title">GIF 信息</h3>
+            <div class="gif-item"><span>大小：</span><span id="gif-size">0KB</span></div>
+            <div class="gif-item"><span>类型：</span><span id="gif-type">image/gif</span></div>
+            <div class="gif-item"><span>分辨率：</span><span id="gif-wh">0 x 0</span></div>
+          </div>
+          <a id="downloadLink" style="display: none">
+            <button class="button">下载 GIF</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script type="text/javascript" src="./js/stop.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+
+    <script>
+      const videoInput = document.getElementById("videoInput");
+      const preview = document.getElementById("preview");
+      const previewContainer = document.getElementById("preview-container");
+      const convertBtn = document.getElementById("convertBtn");
+      const progress = document.getElementById("progress");
+      const result = document.getElementById("result");
+      const downloadLink = document.getElementById("downloadLink");
+      const selectAreaBtn = document.getElementById("selectAreaBtn");
+      const selectionBox = document.getElementById("selection-box");
+      const selectionInfo = document.getElementById("selection-info");
+      const uploadArea = document.querySelector(".upload-area");
+
+      const progressBarFill = document.querySelector(".progress-bar-fill");
+
+      progressBarFill.style.width = `100%`;
+
+      let isSelecting = false;
+      let isDragging = false;
+      let isResizing = false;
+      let currentHandle = null;
+      let startX, startY;
+      let startWidth, startHeight;
+      let startLeft, startTop;
+      let maxX, maxY;
+
+      // 时间线相关变量
+      let isDraggingHandle = false;
+      let timelineHandle = null;
+      let startTime = 0;
+      let endTime = 0;
+      let timelineWidth = 0;
+
+      // 处理拖拽上传
+      uploadArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.add("dragging");
+      });
+
+      uploadArea.addEventListener("dragleave", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.remove("dragging");
+      });
+
+      uploadArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        uploadArea.classList.remove("dragging");
+
+        const files = e.dataTransfer.files;
+        if (files.length > 0 && files[0].type.startsWith("video/")) {
+          videoInput.files = files;
+          handleVideoUpload(files[0]);
+        }
+      });
+
+      // 处理文件选择
+      videoInput.addEventListener("change", (e) => {
+        if (e.target.files.length > 0) {
+          handleVideoUpload(e.target.files[0]);
+        }
+      });
+
+      // 处理视频上传
+      function handleVideoUpload(file) {
+        const url = URL.createObjectURL(file);
+        preview.src = url;
+        preview.style.display = "block";
+        convertBtn.disabled = false;
+        // 隐藏上传区域
+        uploadArea.style.display = "none";
+      }
+
+      videoInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const url = URL.createObjectURL(file);
+          preview.src = url;
+          preview.style.display = "block";
+          uploadArea.style.display = "none";
+          convertBtn.disabled = false;
+
+          // 重置视频信息显示
+          document.querySelector(".video-container").style.display = "none";
+        }
+      });
+
+      preview.addEventListener("loadeddata", function () {
+        console.log("Video loaded successfully");
+        console.log("Video dimensions:", { width: preview.videoWidth, height: preview.videoHeight });
+
+        // 计算适合容器的视频尺寸，保持纵横比
+        const maxHeight = window.innerHeight * 0.6; // 60% of viewport height
+        const scale = Math.min(1, maxHeight / preview.videoHeight);
+        const scaledWidth = preview.videoWidth * scale;
+        const scaledHeight = preview.videoHeight * scale;
+
+        // 设置预览视频的尺寸
+        // preview.style.width = 'auto';
+        preview.style.height = "auto";
+        preview.style.maxHeight = "60vh";
+
+        // 确保选择框在视频加载后显示
+        selectAreaBtn.style.display = "inline-block";
+        convertBtn.disabled = false;
+
+        // 等待一帧确保视频尺寸已更新
+        requestAnimationFrame(() => {
+          // 获取实际显示的视频尺寸
+          const displayWidth = preview.offsetWidth;
+          const displayHeight = preview.offsetHeight;
+
+          // 初始化选择框为视频显示尺寸的一半
+          const initialWidth = displayWidth / 2;
+          const initialHeight = displayHeight / 2;
+          selectionBox.style.width = initialWidth + "px";
+          selectionBox.style.height = initialHeight + "px";
+          selectionBox.style.left = (displayWidth - initialWidth) / 2 + "px";
+          selectionBox.style.top = (displayHeight - initialHeight) / 2 + "px";
+          updateSelectionInfo();
+        });
+      });
+
+      selectAreaBtn.addEventListener("click", function () {
+        const isSelecting = selectionBox.style.display === "block";
+        if (isSelecting) {
+          // 关闭选择框时，重置选择区域为视频完整尺寸
+          selectionBox.style.display = "none";
+          selectionInfo.style.display = "none";
+          document.querySelector(".overlay").style.display = "none";
+          selectionBox.style.left = "0";
+          selectionBox.style.top = "0";
+          selectionBox.style.width = preview.offsetWidth + "px";
+          selectionBox.style.height = preview.offsetHeight + "px";
+          //   this.textContent = "选择区域";
+        } else {
+          selectionBox.style.display = "block";
+          selectionInfo.style.display = "block";
+          document.querySelector(".overlay").style.display = "block";
+          //   this.textContent = "关闭选择";
+          updateOverlay();
+        }
+        updateSelectionInfo();
+      });
+
+      // 拖动选择框
+      selectionBox.addEventListener("mousedown", function (e) {
+        if (e.target === selectionBox) {
+          isDragging = true;
+          startX = e.clientX - selectionBox.offsetLeft;
+          startY = e.clientY - selectionBox.offsetTop;
+        }
+      });
+
+      // 调整大小
+      document.querySelectorAll(".resize-handle").forEach((handle) => {
+        handle.addEventListener("mousedown", function (e) {
+          isResizing = true;
+          currentHandle = this.className.split(" ")[1];
+          startX = e.clientX;
+          startY = e.clientY;
+          startWidth = selectionBox.offsetWidth;
+          startHeight = selectionBox.offsetHeight;
+          startLeft = selectionBox.offsetLeft;
+          startTop = selectionBox.offsetTop;
+          e.stopPropagation();
+        });
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+          console.log("isDragging:", isDragging);
+          const newLeft = e.clientX - startX;
+          const newTop = e.clientY - startY;
+
+          // 限制在视频范围内
+          const maxX = preview.offsetWidth - selectionBox.offsetWidth;
+          const maxY = preview.offsetHeight - selectionBox.offsetHeight;
+
+          selectionBox.style.left = Math.max(0, Math.min(newLeft, maxX)) + "px";
+          selectionBox.style.top = Math.max(0, Math.min(newTop, maxY)) + "px";
+
+          updateSelectionInfo();
+
+          if (isSelecting) {
+            requestAnimationFrame(updateOverlay);
+          }
+        } else if (isResizing) {
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+
+          let newWidth = startWidth;
+          let newHeight = startHeight;
+          let newLeft = startLeft;
+          let newTop = startTop;
+
+          const minSize = 50;
+          const maxWidth = preview.offsetWidth - newLeft;
+          const maxHeight = preview.offsetHeight - newTop;
+
+          switch (currentHandle) {
+            case "se":
+              newWidth = Math.min(startWidth + dx, preview.offsetWidth - startLeft);
+              newHeight = Math.min(startHeight + dy, preview.offsetHeight - startTop);
+              break;
+            case "sw":
+              const swWidth = Math.max(minSize, startWidth - dx);
+              newWidth = Math.min(swWidth, startLeft + startWidth);
+              newLeft = Math.max(0, startLeft + startWidth - newWidth);
+              newHeight = Math.min(startHeight + dy, preview.offsetHeight - startTop);
+              break;
+            case "ne":
+              newWidth = Math.min(startWidth + dx, preview.offsetWidth - startLeft);
+              const neHeight = Math.max(minSize, startHeight - dy);
+              newHeight = Math.min(neHeight, startTop + startHeight);
+              newTop = Math.max(0, startTop + startHeight - newHeight);
+              break;
+            case "nw":
+              const nwWidth = Math.max(minSize, startWidth - dx);
+              newWidth = Math.min(nwWidth, startLeft + startWidth);
+              newLeft = Math.max(0, startLeft + startWidth - newWidth);
+
+              const nwHeight = Math.max(minSize, startHeight - dy);
+              newHeight = Math.min(nwHeight, startTop + startHeight);
+              newTop = Math.max(0, startTop + startHeight - newHeight);
+              break;
+          }
+
+          // 确保选择框不会超出视频边界
+          if (newLeft + newWidth > preview.offsetWidth) {
+            newWidth = preview.offsetWidth - newLeft;
+          }
+          if (newTop + newHeight > preview.offsetHeight) {
+            newHeight = preview.offsetHeight - newTop;
+          }
+
+          // 应用新的尺寸和位置
+          selectionBox.style.width = newWidth + "px";
+          selectionBox.style.height = newHeight + "px";
+          selectionBox.style.left = newLeft + "px";
+          selectionBox.style.top = newTop + "px";
+          updateSelectionInfo();
+
+          if (isSelecting) {
+            requestAnimationFrame(updateOverlay);
+          }
+        }
+        updateOverlay();
+      });
+
+      document.addEventListener("mouseup", function () {
+        isDragging = false;
+        isResizing = false;
+        updateOverlay();
+      });
+
+      function updateSelectionInfo() {
+        const width = selectionBox.offsetWidth;
+        const height = selectionBox.offsetHeight;
+        selectionInfo.textContent = `${Math.round(width)} × ${Math.round(height)}`;
+      }
+
+      function updateOverlay() {
+        const box = selectionBox.getBoundingClientRect();
+        const container = preview.getBoundingClientRect();
+
+        // 计算选择框相对于容器的位置
+        const left = box.left - container.left;
+        const top = box.top - container.top;
+
+        // 更新四个遮罩部分的位置和尺寸
+        const overlayTop = document.querySelector(".overlay-top");
+        const overlayRight = document.querySelector(".overlay-right");
+        const overlayBottom = document.querySelector(".overlay-bottom");
+        const overlayLeft = document.querySelector(".overlay-left");
+
+        overlayTop.style.height = `${top}px`;
+
+        // 确保 overlay-right 不超出边界
+        overlayRight.style.left = `${left + box.width}px`;
+        overlayRight.style.width = `${Math.max(0, container.width - (left + box.width))}px`;
+        overlayRight.style.top = `${top}px`;
+        overlayRight.style.height = `${box.height}px`;
+
+        overlayBottom.style.top = `${top + box.height}px`;
+        overlayBottom.style.height = `${container.height - (top + box.height)}px`;
+        overlayLeft.style.width = `${left}px`;
+        overlayLeft.style.top = `${top}px`;
+        overlayLeft.style.height = `${box.height}px`;
+
+        // 更新下方遮罩 确保不超出边界
+        const bottomPosition = top + box.height;
+        overlayBottom.style.top = `${bottomPosition}px`;
+        overlayBottom.style.height = `${Math.max(0, container.height - bottomPosition)}px`;
+      }
+
+      // 时间线相关变量
+      preview.addEventListener("loadedmetadata", async function () {
+        timelineWidth = document.querySelector(".timeline").offsetWidth;
+        endTime = preview.duration;
+
+        // 显示时间线容器
+        document.querySelector(".timeline-container").style.display = "block";
+
+        // 初始化手柄位置
+        const rightHandle = document.querySelector(".timeline-handle.right");
+        rightHandle.style.right = "0%"; // 确保右手柄在最右侧
+
+        updateTimeDisplay();
+        await generateThumbnails();
+        updateTimelineDisplay();
+      });
+
+      // 更新时间显示
+      function updateTimeDisplay() {
+        const formatTime = (time) => {
+          const minutes = Math.floor(time / 60);
+          const seconds = Math.floor(time % 60);
+          return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+        };
+
+        // document.querySelector('.timeline-time.start').textContent = formatTime(startTime);
+        document.querySelector(".timeline-time.end").textContent = formatTime(preview.duration - startTime - (preview.duration - endTime));
+        // document.querySelector('.timeline-time.current').textContent = formatTime(preview.currentTime);
+      }
+
+      // 时间线拖动处理
+      document.querySelectorAll(".timeline-handle").forEach((handle) => {
+        handle.addEventListener("mousedown", function (e) {
+          isDraggingHandle = true;
+          timelineHandle = this;
+          e.preventDefault();
+        });
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (isDraggingHandle) {
+          const timeline = document.querySelector(".timeline");
+          const rect = timeline.getBoundingClientRect();
+          const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+          const time = (x / rect.width) * preview.duration;
+
+          if (timelineHandle.classList.contains("left")) {
+            startTime = Math.min(time, endTime - 0.1);
+            timelineHandle.style.left = (startTime / preview.duration) * 100 + "%";
+            preview.currentTime = startTime;
+          } else {
+            endTime = Math.max(time, startTime + 0.1);
+            timelineHandle.style.right = 100 - (endTime / preview.duration) * 100 + "%";
+            preview.currentTime = time; // 右边手柄拖动时更新视频时间
+          }
+
+          updateTimeDisplay();
+          updateTimelineDisplay(); // 更新缩略图显示
+        }
+      });
+
+      document.addEventListener("mouseup", function () {
+        isDraggingHandle = false;
+        timelineHandle = null;
+      });
+
+      // 更新进度条
+      preview.addEventListener("timeupdate", function () {
+        const progress = document.querySelector(".timeline-progress");
+        const percent = (preview.currentTime / preview.duration) * 100;
+        progress.style.width = `${percent}%`;
+        updateTimeDisplay();
+      });
+
+      // 时间线点击跳转
+      document.querySelector(".timeline").addEventListener("click", function (e) {
+        if (!isDraggingHandle) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const percent = x / rect.width;
+          const time = percent * preview.duration;
+          preview.currentTime = Math.max(startTime, Math.min(time, endTime));
+        }
+      });
+
+      // 生成时间线缩略图
+      async function generateThumbnails() {
+        const thumbnailsContainer = document.querySelector(".timeline-thumbnails");
+        thumbnailsContainer.innerHTML = ""; // 清除现有缩略图
+
+        const containerWidth = thumbnailsContainer.offsetWidth;
+        const thumbnailWidth = 40; // 每个缩略图的宽度
+        const numThumbnails = Math.ceil(containerWidth / thumbnailWidth); // 根据容器宽度计算缩略图数量
+        const interval = preview.duration / numThumbnails;
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // 设置缩略图尺寸
+        const thumbnailHeight = 40;
+        const aspectRatio = preview.videoWidth / preview.videoHeight;
+        canvas.width = thumbnailWidth * aspectRatio;
+        canvas.height = thumbnailHeight;
+
+        // 生成缩略图
+        for (let i = 0; i < numThumbnails; i++) {
+          const time = i * interval;
+          const thumbnailDiv = document.createElement("div");
+          thumbnailDiv.className = "timeline-thumbnail";
+          thumbnailsContainer.appendChild(thumbnailDiv);
+
+          try {
+            // 设置视频时间并等待加载
+            preview.currentTime = time;
+            await new Promise((resolve, reject) => {
+              const timeoutId = setTimeout(() => {
+                reject(new Error("Seek timeout"));
+              }, 1000); // 1秒超时
+
+              preview.addEventListener(
+                "seeked",
+                () => {
+                  clearTimeout(timeoutId);
+                  resolve();
+                },
+                { once: true }
+              );
+            });
+
+            // 绘制缩略图
+            ctx.drawImage(preview, 0, 0, canvas.width, canvas.height);
+            thumbnailDiv.style.backgroundImage = `url(${canvas.toDataURL("image/jpeg", 0.7)})`;
+            thumbnailDiv.style.minWidth = `${thumbnailWidth}px`;
+          } catch (error) {
+            console.error(`Error generating thumbnail at time ${time}:`, error);
+            // 如果生成失败，使用上一帧的图像（如果有的话）
+            if (i > 0) {
+              const previousThumbnail = thumbnailDiv.previousElementSibling;
+              if (previousThumbnail) {
+                thumbnailDiv.style.backgroundImage = previousThumbnail.style.backgroundImage;
+              }
+            }
+          }
+        }
+
+        // 恢复视频时间
+        preview.currentTime = startTime;
+      }
+
+      // 监听窗口大小变化，重新生成缩略图
+      let resizeTimeout;
+      window.addEventListener("resize", function () {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(async function () {
+          await generateThumbnails();
+          updateTimelineDisplay();
+        }, 500); // 500ms 防抖
+      });
+
+      // 更新时间线显示
+      function updateTimelineDisplay() {
+        const timeline = document.querySelector(".timeline");
+        const thumbnails = document.querySelector(".timeline-thumbnails");
+
+        // 计算选中区域的百分比
+        const leftPercent = (startTime / preview.duration) * 100;
+        const rightPercent = (endTime / preview.duration) * 100;
+
+        // 更新缩略图裁剪区域
+        thumbnails.style.setProperty("--start-percent", `${leftPercent}%`);
+        thumbnails.style.setProperty("--end-percent", `${rightPercent}%`);
+      }
+
+      let isConverting = false;
+      convertBtn.addEventListener("click", async function () {
+        if (isConverting) return;
+
+        isConverting = true;
+        convertBtn.disabled = true;
+        convertBtn.textContent = "进行中...";
+
+        try {
+          // Existing conversion code...
+          const fps = parseInt(document.getElementById("fps").value);
+          const quality = parseInt(document.getElementById("quality").value);
+
+          console.log("Starting conversion process...");
+          progress.style.display = "block";
+          downloadLink.style.display = "none";
+
+          try {
+            // 确保视频已经完全加载
+            if (!preview.duration || !preview.videoWidth || !preview.videoHeight) {
+              throw new Error("Video is not fully loaded. Please wait and try again.");
+            }
+
+            // 计算实际视频与显示视频的比例
+            const scaleX = preview.videoWidth / preview.offsetWidth;
+            const scaleY = preview.videoHeight / preview.offsetHeight;
+
+            // 获取选择框的显示尺寸和位置
+            const displaySelection = {
+              x: parseInt(selectionBox.style.left),
+              y: parseInt(selectionBox.style.top),
+              width: parseInt(selectionBox.style.width),
+              height: parseInt(selectionBox.style.height)
+            };
+
+            // 转换为实际视频上的坐标和尺寸
+            const selection = {
+              x: Math.round(displaySelection.x * scaleX),
+              y: Math.round(displaySelection.y * scaleY),
+              width: Math.round(displaySelection.width * scaleX),
+              height: Math.round(displaySelection.height * scaleY)
+            };
+
+            const gif = new GIF({
+              workers: 2,
+              quality: quality,
+              width: selection.width,
+              height: selection.height,
+              workerScript: "./js/gif.worker.js"
+            });
+
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            canvas.width = selection.width;
+            canvas.height = selection.height;
+
+            // 重置视频时间到开始时间
+            preview.currentTime = startTime;
+            await new Promise((resolve) => {
+              preview.addEventListener("seeked", resolve, { once: true });
+            });
+
+            const totalFrames = Math.floor((endTime - startTime) * fps);
+            const frameInterval = 1 / fps;
+            const progressText = document.getElementById("progress-text");
+            const progressBarFill = document.querySelector(".progress-bar-fill");
+
+            // progressBarFill.style.width = `100%`;
+
+            for (let currentFrame = 0; currentFrame < totalFrames; currentFrame++) {
+              try {
+                preview.currentTime = startTime + currentFrame * frameInterval;
+                await new Promise((resolve) => {
+                  preview.addEventListener("seeked", resolve, { once: true });
+                });
+
+                ctx.drawImage(preview, selection.x, selection.y, selection.width, selection.height, 0, 0, canvas.width, canvas.height);
+
+                gif.addFrame(canvas, { copy: true, delay: 1000 / fps });
+
+                const percent = Math.round(((currentFrame + 1) / totalFrames) * 100);
+                progressText.textContent = `处理视频帧: ${percent}%`;
+                progressBarFill.style.width = `${percent}%`;
+              } catch (error) {
+                console.error(`Error processing frame ${currentFrame + 1}:`, error);
+                throw new Error(`Failed to process frame ${currentFrame + 1}: ${error.message}`);
+              }
+            }
+
+            console.log("All frames processed, starting GIF generation...");
+            progressText.textContent = "生成 GIF...";
+            progressBarFill.style.width = "100%";
+            gif.render();
+
+            gif.on("progress", (p) => {
+              const percent = Math.round(p * 100);
+              console.log("GIF encoding progress:", percent + "%");
+              progressText.textContent = `正在生成 GIF: ${percent}%`;
+              progressBarFill.style.width = `${percent}%`;
+            });
+
+            gif.on("finished", (blob) => {
+              console.log("GIF generation completed");
+
+              const img = new Image();
+              img.onload = function () {
+                document.getElementById("gif-wh").textContent = `${img.width} x ${img.height}`;
+              };
+
+              const gifUrl = URL.createObjectURL(blob);
+              img.src = gifUrl;
+
+              document.getElementById("gif-size").textContent = `${(blob.size / 1024 / 1024).toFixed(2)}MB`;
+              document.getElementById("gif-type").textContent = `${blob.type}`;
+
+              console.log("-----------", gifUrl, blob.size, blob.type);
+
+              downloadLink.href = gifUrl;
+              downloadLink.download = "converted.gif";
+              downloadLink.style.display = "inline-block";
+              progress.style.display = "none";
+
+              result.innerHTML = `<img src="${gifUrl}" style="max-width: 100%;" alt="Converted GIF">`;
+
+              // 只在完全完成后启用按钮
+              isConverting = false;
+              convertBtn.disabled = false;
+              convertBtn.textContent = "开始转换 GIF";
+              document.querySelector(".result-container").style.display = "flex";
+            });
+          } catch (error) {
+            console.error("Error during conversion:", error);
+            progressText.textContent = "Error: " + error.message;
+          }
+        } finally {
+          // 移除这里的状态重置，让按钮保持禁用直到完全完成
+        }
+      });
+
+      // 添加滑动条值的更新
+      const fpsSlider = document.getElementById("fps");
+      const qualitySlider = document.getElementById("quality");
+      const fpsValue = document.getElementById("fpsValue");
+      const qualityValue = document.getElementById("qualityValue");
+
+      fpsSlider.addEventListener("input", function () {
+        fpsValue.textContent = this.value;
+      });
+
+      qualitySlider.addEventListener("input", function () {
+        qualityValue.textContent = this.value;
+      });
+
+      function formatDuration(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = Math.floor(seconds % 60);
+        return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+      }
+
+      function updateVideoInfo() {
+        const videoInfo = document.querySelector(".video-container");
+        const controlBtn = document.querySelector(".control-container");
+        const lineDoc = document.querySelector(".line");
+        const file = videoInput.files[0];
+
+        if (file && preview.videoWidth) {
+          document.getElementById("video-name").textContent = file.name;
+          document.getElementById("video-duration").textContent = formatDuration(preview.duration);
+          document.getElementById("video-resolution").textContent = `${preview.videoWidth}x${preview.videoHeight}`;
+
+          videoInfo.style.display = "flex";
+          controlBtn.style.display = "flex";
+          lineDoc.style.display = "block";
+        }
+      }
+
+      preview.addEventListener("loadedmetadata", updateVideoInfo);
+
+      videoInput.addEventListener("change", function (e) {
+        const file = e.target.files[0];
+        if (file) {
+          const url = URL.createObjectURL(file);
+          preview.src = url;
+          preview.style.display = "block";
+          uploadArea.style.display = "none";
+          convertBtn.disabled = false;
+
+          // 重置视频信息显示
+          document.querySelector(".video-container").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
