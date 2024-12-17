@@ -1,6 +1,6 @@
 # VideoToGif
 
-![Video To GIF](https://minio-file.luckday.cn/images/converted_20241218000816.gif)
+![Video To GIF](./img/converted.gif)
 
 ## VIDEO TO GIF 简介
 一键转换视频至GIF，所有视频转换核心功能全部由`Windsurf，Claude3.5Sonnet`模型生成，功能总耗时大概一个小时，页面样式后续由我本人调整（不会UI,参考了Adobe设计风格），找素材以及UI样式调整大概耗时一天左右。（logo，图标都是网上找来的，如有侵权，请及时告知）
