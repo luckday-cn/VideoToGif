@@ -1,0 +1,57 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景 -->
+    <rect width="100%" height="100%" fill="#ffffff" />
+
+    <!-- 左侧二维码区域 -->
+    <g transform="translate(50, 50)">
+        <!-- 二维码外框 -->
+        <rect x="40" y="0" width="250" height="250" rx="15" fill="#fafafa" stroke="#e8e8e8" stroke-width="2" />
+        <!-- 二维码图片 -->
+        <image x="40" y="0" width="248" height="248" href="https://cdn.luckday.cn/static/image/gzh.png" />
+        <text x="64" y="300" font-size="18" font-weight="bolder"="middle" fill="#999" font-family="Arial">扫描二维码</text>
+        <text x="210" y="300" font-size="18" font-weight="bolder" text-anchor="middle" fill="#999" font-family="Arial">|
+            关注公众号</text>
+    </g>
+
+    <!-- 右侧图片区域 -->
+    <g transform="translate(450, 50)">
+        <!-- 图片容器 -->
+        <clipPath id="circularMask">
+            <circle cx="125" cy="125" r="125" />
+        </clipPath>
+
+        <!-- 实际图片 -->
+        <image x="0" y="0" width="250" height="250" href="https://cdn.luckday.cn/static/image/zhiwen.jpg"
+            clip-path="url(#circularMask)" />
+
+        <!-- 扫描动画效果 -->
+        <g>
+            <!-- 扫描线 -->
+            <rect x="0" y="0" width="250" height="4" fill="url(#scanGradient)">
+                <animate attributeName="y" values="0;250;0" dur="3s" repeatCount="indefinite" />
+            </rect>
+
+            <!-- 扫描光效 -->
+            <rect x="0" y="0" width="250" height="30" fill="url(#glowGradient)" opacity="0.5">
+                <animate attributeName="y" values="0;250;0" dur="3s" repeatCount="indefinite" />
+            </rect>
+        </g>
+    </g>
+
+    <!-- 渐变定义 -->
+    <defs>
+        <!-- 扫描线渐变 -->
+        <linearGradient id="scanGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0" />
+            <stop offset="50%" style="stop-color:#4CAF50;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+        </linearGradient>
+
+        <!-- 光效渐变 -->
+        <linearGradient id="glowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:0.3" />
+            <stop offset="50%" style="stop-color:#4CAF50;stop-opacity:0.1" />
+            <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:0" />
+        </linearGradient>
+    </defs>
+</svg>
