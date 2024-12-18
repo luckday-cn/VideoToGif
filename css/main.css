@@ -439,15 +439,16 @@ video {
 }
 
 #result {
-  /* margin-top: 20px; */
-  text-align: center;
   width: 68%;
-  height: 60vh;
-  /* border-right: 1px solid #afafaf; */
+  /* height: 60vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #result img {
-  height: 100%;
+  /* height: 100%; */
+  width: 100%;
 }
 
 .timeline-container {
@@ -875,4 +876,11 @@ video::-webkit-media-controls-panel {
     padding-left: 0;
     padding-top: 20px;
   }
+}
+.settings {
+  display: flex;
+}
+.github {
+  margin-right: 20px;
+  cursor: pointer;
 }
